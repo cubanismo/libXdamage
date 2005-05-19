@@ -33,7 +33,7 @@ dnl digit in the version number to track changes which don't affect the
 dnl protocol, so Xfixes version l.n.m corresponds to protocol version l.n
 dnl
 AC_INIT(libXdamage, 1.0.1, [keithp@keithp.com], libXdamage)
-AM_INIT_AUTOMAKE([dist-bzip2])
+AM_INIT_AUTOMAKE([1.7], [dist-bzip2])
 AM_MAINTAINER_MODE
 
 AM_CONFIG_HEADER(config.h)
