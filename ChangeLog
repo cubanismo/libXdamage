@@ -1,3 +1,11 @@
+2005-07-08  Keith Packard  <keithp@keithp.com>
+
+	* .cvsignore:
+	* src/.cvsignore:
+	* src/Makefile.am:
+	Add .cvsignore files
+	Switch _la_CFLAGS for AM_CFLAGS to clean up directory
+
 Tue May 17 12:39:30 2005  Søren Sandmann  <sandmann@redhat.com>
 
 	* Add build system
