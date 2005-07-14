@@ -86,6 +86,7 @@ fi
 
 DAMAGEEXT_VERSION=[`echo $VERSION | sed 's/^\([0-9][0-9]*\.[0-9][0-9]*\).*$/\1/'`]
 PKG_CHECK_MODULES(XDAMAGE, [damageproto >= $DAMAGEEXT_VERSION] xfixes)
+AC_SUBST(XDAMAGE_CFLAGS)
 
 AC_OUTPUT([Makefile
 	   src/Makefile
