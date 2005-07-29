@@ -32,7 +32,7 @@ dnl try to keep these the same.  Note that the library has an extra
 dnl digit in the version number to track changes which don't affect the
 dnl protocol, so Xfixes version l.n.m corresponds to protocol version l.n
 dnl
-AC_INIT(libXdamage, 1.0.1, [keithp@keithp.com], libXdamage)
+AC_INIT(libXdamage, 1.0.1, [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg], libXdamage)
 AM_INIT_AUTOMAKE([dist-bzip2])
 AM_MAINTAINER_MODE
 
@@ -87,6 +87,8 @@ fi
 DAMAGEEXT_VERSION=[`echo $VERSION | sed 's/^\([0-9][0-9]*\.[0-9][0-9]*\).*$/\1/'`]
 PKG_CHECK_MODULES(XDAMAGE, [damageproto >= $DAMAGEEXT_VERSION] xfixes)
 AC_SUBST(XDAMAGE_CFLAGS)
+
+XORG_RELEASE_VERSION
 
 AC_OUTPUT([Makefile
 	   src/Makefile
