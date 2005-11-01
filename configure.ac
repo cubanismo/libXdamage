@@ -85,7 +85,7 @@ fi
 # find the required protocol version
 
 DAMAGEEXT_VERSION=[`echo $VERSION | sed 's/^\([0-9][0-9]*\.[0-9][0-9]*\).*$/\1/'`]
-PKG_CHECK_MODULES(XDAMAGE, [damageproto >= $DAMAGEEXT_VERSION] xfixes)
+PKG_CHECK_MODULES(XDAMAGE, [damageproto >= $DAMAGEEXT_VERSION] xfixes fixesproto xextproto)
 AC_SUBST(XDAMAGE_CFLAGS)
 
 XORG_RELEASE_VERSION
