@@ -87,6 +87,7 @@ XDamageExtAddDisplay (XDamageExtInfo	*extinfo,
 	{
 	    UnlockDisplay (dpy);
 	    SyncHandle ();
+	    Xfree(info);
 	    return 0;
 	}
 	info->major_version = rep.majorVersion;
