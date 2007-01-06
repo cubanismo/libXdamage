@@ -362,3 +362,22 @@ XDamageSubtract (Display *dpy, Damage damage,
     UnlockDisplay (dpy);
     SyncHandle ();
 }
+
+void
+XDamagePost (Display *dpy, Drawable drawable, XserverRegion region)
+{
+    XDamageExtDisplayInfo	*info = XDamageFindDisplay (dpy);
+    xDamagePostReq		*req;
+    int				len;
+
+    XDamageSimpleCheckExtension (dpy, info);
+    LockDisplay (dpy);
+    GetReq (DamagePost, req);
+    req->reqType = info->codes->major_opcode;
+    req->damageReqType = X_DamagePost;
+    req->drawable = drawable;
+    req->region = region;
+
+    UnlockDisplay (dpy);
+    SyncHandle ();
+}
