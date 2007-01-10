@@ -66,7 +66,7 @@ XDamageSubtract (Display *dpy, Damage damage,
 		 XserverRegion repair, XserverRegion parts);
 
 void
-XDamagePost (Display *dpy, Drawable drawable, XserverRegion region);
+XDamageAdd (Display *dpy, Drawable drawable, XserverRegion region);
 
 _XFUNCPROTOEND
 

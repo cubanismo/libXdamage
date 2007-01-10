@@ -365,17 +365,17 @@ XDamageSubtract (Display *dpy, Damage damage,
 }
 
 void
-XDamagePost (Display *dpy, Drawable drawable, XserverRegion region)
+XDamageAdd (Display *dpy, Drawable drawable, XserverRegion region)
 {
     XDamageExtDisplayInfo	*info = XDamageFindDisplay (dpy);
-    xDamagePostReq		*req;
+    xDamageAddReq		*req;
     int				len;
 
     XDamageSimpleCheckExtension (dpy, info);
     LockDisplay (dpy);
-    GetReq (DamagePost, req);
+    GetReq (DamageAdd, req);
     req->reqType = info->codes->major_opcode;
-    req->damageReqType = X_DamagePost;
+    req->damageReqType = X_DamageAdd;
     req->drawable = drawable;
     req->region = region;
 
