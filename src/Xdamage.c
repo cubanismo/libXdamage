@@ -231,7 +231,8 @@ XDamageWireToEvent(Display *dpy, XEvent *event, xEvent *wire)
 	aevent->display = dpy;
 	aevent->drawable = awire->drawable;
 	aevent->damage = awire->damage;
-	aevent->level = awire->level;
+	aevent->level = awire->level & ~DamageNotifyMore;
+	aevent->more = (awire->level & DamageNotifyMore) ? True : False;
 	aevent->timestamp = awire->timestamp;
 	aevent->area.x = awire->area.x;
 	aevent->area.y = awire->area.y;
@@ -264,7 +265,7 @@ XDamageEventToWire(Display *dpy, XEvent *event, xEvent *wire)
 	awire->type = aevent->type | (aevent->send_event ? 0x80 : 0);
 	awire->drawable = aevent->drawable;
 	awire->damage = aevent->damage;
-	awire->level = aevent->level;
+	awire->level = aevent->level | (aevent->more ? DamageNotifyMore : 0);
 	awire->timestamp = aevent->timestamp;
 	awire->area.x = aevent->area.x;
 	awire->area.y = aevent->area.y;
