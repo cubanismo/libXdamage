@@ -1,6 +1,4 @@
 /*
- * $Id$
- *
  * Copyright © 2003 Keith Packard
  * Copyright © 2007 Eric Anholt
  *
