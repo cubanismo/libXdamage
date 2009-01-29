@@ -21,8 +21,6 @@
 #  TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 #  PERFORMANCE OF THIS SOFTWARE.
 
-AM_CFLAGS = $(XDAMAGE_CFLAGS) $(X_CFLAGS)
-
 SUBDIRS = src
 
 INCLUDES = $(top_srcdir)/include/
@@ -30,7 +28,7 @@ INCLUDES = $(top_srcdir)/include/
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = xdamage.pc
 
-EXTRA_DIST = xdamage.pc.in autogen.sh
+EXTRA_DIST = xdamage.pc.in
 
 EXTRA_DIST += ChangeLog
 MAINTAINERCLEANFILES = ChangeLog
@@ -38,6 +36,6 @@ MAINTAINERCLEANFILES = ChangeLog
 .PHONY: ChangeLog
 
 ChangeLog:
-	(GIT_DIR=$(top_srcdir)/.git git-log > .changelog.tmp && mv .changelog.tmp ChangeLog; rm -f .changelog.tmp) || (touch ChangeLog; echo 'git directory not found: installing possibly empty changelog.' >&2)
+	$(CHANGELOG_CMD)
 
 dist-hook: ChangeLog

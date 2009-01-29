@@ -89,7 +89,7 @@ XDamageExtAddDisplay (XDamageExtInfo	*extinfo,
 	    UnlockDisplay (dpy);
 	    SyncHandle ();
 	    Xfree(info);
-	    return 0;
+	    return NULL;
 	}
 	info->major_version = rep.majorVersion;
 	info->minor_version = rep.minorVersion;
@@ -372,7 +372,6 @@ XDamageAdd (Display *dpy, Drawable drawable, XserverRegion region)
 {
     XDamageExtDisplayInfo	*info = XDamageFindDisplay (dpy);
     xDamageAddReq		*req;
-    int				len;
 
     XDamageSimpleCheckExtension (dpy, info);
     LockDisplay (dpy);

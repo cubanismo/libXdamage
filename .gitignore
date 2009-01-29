@@ -19,3 +19,9 @@ mkinstalldirs
 stamp-h1
 xdamage.pc
 *~
+*.o
+*.la
+*.lo
+libXdamage-*.tar.*
+ChangeLog
+tags
