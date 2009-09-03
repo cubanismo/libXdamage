@@ -24,11 +24,11 @@ dnl Process this file with autoconf to create configure.
 AC_PREREQ([2.57])
 
 dnl
-dnl Version should match the current XFixes version. XFixesQueryVersion
-dnl returns the version from xfixeswire.h, NOT the version we set here. But we
+dnl Version should match the current XDamage version. XDamageQueryVersion
+dnl returns the version from damagewire.h, NOT the version we set here. But we
 dnl try to keep these the same.  Note that the library has an extra
 dnl digit in the version number to track changes which don't affect the
-dnl protocol, so Xfixes version l.n.m corresponds to protocol version l.n
+dnl protocol, so Xdamage version l.n.m corresponds to protocol version l.n
 dnl
 AC_INIT(libXdamage, 1.1.1, [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg], libXdamage)
 AM_INIT_AUTOMAKE([dist-bzip2])
