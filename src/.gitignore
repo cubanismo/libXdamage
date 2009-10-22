@@ -1,6 +1,0 @@
-.deps
-.libs
-libXdamage.la
-*.lo
-Makefile
-Makefile.in
