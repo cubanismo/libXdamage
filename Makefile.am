@@ -30,8 +30,6 @@ pkgconfig_DATA = xdamage.pc
 
 EXTRA_DIST = xdamage.pc.in
 
-EXTRA_DIST += ChangeLog
-MAINTAINERCLEANFILES = ChangeLog
 
 .PHONY: ChangeLog
 
