@@ -28,6 +28,7 @@ INCLUDES = $(top_srcdir)/include/
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = xdamage.pc
 
+MAINTAINERCLEANFILES = ChangeLog INSTALL
 EXTRA_DIST = xdamage.pc.in
 
 
