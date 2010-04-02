@@ -383,3 +383,24 @@ XDamageAdd (Display *dpy, Drawable drawable, XserverRegion region)
     UnlockDisplay (dpy);
     SyncHandle ();
 }
+
+void
+XDamageSubtractAndTrigger (Display *dpy, Damage damage,
+			   XserverRegion repair, XserverRegion parts,
+			   XSyncFence finishedFence)
+{
+    XDamageExtDisplayInfo		*info = XDamageFindDisplay (dpy);
+    xDamageSubtractAndTriggerReq	*req;
+
+    XDamageSimpleCheckExtension (dpy, info);
+    LockDisplay (dpy);
+    GetReq (DamageSubtractAndTrigger, req);
+    req->reqType = info->codes->major_opcode;
+    req->damageReqType = X_DamageSubtractAndTrigger;
+    req->damage = damage;
+    req->repair = repair;
+    req->parts = parts;
+    req->finishedFence = finishedFence;
+    UnlockDisplay (dpy);
+    SyncHandle ();
+}

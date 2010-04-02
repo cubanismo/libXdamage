@@ -31,7 +31,7 @@ dnl digit in the version number to track changes which don't affect the
 dnl protocol, so Xdamage version l.n.m corresponds to protocol version l.n
 dnl
 AC_INIT(libXdamage,
-	1.1.3,
+	1.3.0,
 	[https://bugs.freedesktop.org/enter_bug.cgi?product=xorg],
 	libXdamage)
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
@@ -53,7 +53,7 @@ AC_PROG_LIBTOOL
 
 DAMAGEEXT_VERSION=[`echo $VERSION | sed 's/^\([0-9][0-9]*\.[0-9][0-9]*\).*$/\1/'`]
 AC_SUBST(DAMAGEEXT_VERSION)
-PKG_CHECK_MODULES(XDAMAGE, [damageproto >= $DAMAGEEXT_VERSION] xfixes fixesproto xextproto x11)
+PKG_CHECK_MODULES(XDAMAGE, [damageproto >= $DAMAGEEXT_VERSION] xfixes fixesproto [xextproto >= 7.1.99] x11)
 AC_SUBST(XDAMAGE_CFLAGS)
 
 AC_OUTPUT([Makefile

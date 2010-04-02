@@ -25,9 +25,11 @@
 
 #include <X11/extensions/damagewire.h>
 #include <X11/extensions/Xfixes.h>
+#include <X11/extensions/syncconst.h>
 #include <X11/Xfuncproto.h>
 
 #define XDAMAGE_1_1_INTERFACE
+#define XDAMAGE_1_3_INTERFACE
 
 typedef XID Damage;
 
@@ -67,6 +69,11 @@ XDamageSubtract (Display *dpy, Damage damage,
 
 void
 XDamageAdd (Display *dpy, Drawable drawable, XserverRegion region);
+
+void
+XDamageSubtractAndTrigger (Display *dpy, Damage damage,
+			   XserverRegion repair, XserverRegion parts,
+			   XSyncFence finishedFence);
 
 _XFUNCPROTOEND
 
